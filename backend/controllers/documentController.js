@@ -7,7 +7,6 @@ import Quiz from "../models/Quiz.js";
 
 import { extractTextFromPDF } from "../utils/pdfParser.js";
 import { chunkText } from "../utils/textChunker.js";
-import { count } from "console";
 
 // @desc    Upload PDF document
 // @route   POST /api/documents/upload

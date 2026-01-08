@@ -1,4 +1,4 @@
-import Flashcard from "../models/Flashcard";
+import Flashcard from "../models/Flashcard.js";
 
 // @desc    Get all Flashcards for a Document
 // @route   GET /api/flashcards/:documentId
@@ -44,6 +44,8 @@ export const getAllFlashcardSets = async (req, res, next) => {
 // @desc    Mark Flashcard as reviewed
 // @route   POST /api/flashcards/:cardId/review
 // @access  Private
+// There are multiple Flashcards and every Flashcard has cards[] inside of it
+// This api updates the lastReviewed && reviewCount fields of a card inside the cards[]
 export const reviewFlashcard = async (req, res, next) => {
   try {
     const flashcardSet = await Flashcard.findOne({
@@ -136,6 +138,7 @@ export const toggleStarFlashcard = async (req, res, next) => {
 // @desc    Delete Flashcard set
 // @route   DELETE /api/flashcards/:id
 // @access  Private
+// This deletes the FlashcardSet which has all the cards[] in it
 export const deleteFlashcardSet = async (req, res, next) => {
   try {
     const flashcardSet = await Flashcard.findOne({

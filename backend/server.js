@@ -10,6 +10,7 @@ import errorHandler from "./middleware/errorHandler.js";
 import authRoutes from "./routes/authRoutes.js";
 import documentRoutes from "./routes/documentRoutes.js";
 import flashcardRoutes from "./routes/flashcardRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
 
 dotenv.config();
 
@@ -42,6 +43,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes);
 app.use("/api/documents", documentRoutes);
 app.use("/api/flashcards", flashcardRoutes);
+app.use("/api/ai", aiRoutes);
 
 app.use(errorHandler);
 
