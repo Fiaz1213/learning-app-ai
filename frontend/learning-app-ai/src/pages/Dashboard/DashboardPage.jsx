@@ -19,7 +19,7 @@ const DashboardPage = () => {
     const fetchDashboardData = async () => {
       try {
         const data = await progressService.getDashboardData();
-        console.log("Data____getDashboardData", data);
+        // console.log("Data____getDashboardData", data);
 
         setDashboardData(data.data);
       } catch (error) {

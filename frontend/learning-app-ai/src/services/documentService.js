@@ -21,7 +21,7 @@ const uploadDocument = async (formData) => {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -32,7 +32,7 @@ const uploadDocument = async (formData) => {
 const deleteDocument = async (id) => {
   try {
     const response = await axiosInstance.delete(
-      API_PATHS.DOCUMENTS.DELETE_DOCUMENT(id)
+      API_PATHS.DOCUMENTS.DELETE_DOCUMENT(id),
     );
     return response.data;
   } catch (error) {
@@ -43,7 +43,7 @@ const deleteDocument = async (id) => {
 const getDocumentById = async (id) => {
   try {
     const response = await axiosInstance.get(
-      API_PATHS.DOCUMENTS.GET_DOCUMENT_BY_ID(id)
+      API_PATHS.DOCUMENTS.GET_DOCUMENT_BY_ID(id),
     );
     return response.data;
   } catch (error) {
