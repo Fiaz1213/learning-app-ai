@@ -6,8 +6,9 @@ import { API_PATHS } from "../utils/apiPaths";
 const getQuizzesForDocument = async (documentId) => {
   try {
     const response = await axiosInstance.get(
-      API_PATHS.QUIZZES.GET_QUIZZES_FOR_DOC(documentId)
+      API_PATHS.QUIZZES.GET_QUIZZES_FOR_DOC(documentId),
     );
+
     return response.data;
   } catch (error) {
     throw error.response?.data || { message: "Failed to fetch quizzes" };
@@ -17,7 +18,7 @@ const getQuizzesForDocument = async (documentId) => {
 const getQuizById = async (quizId) => {
   try {
     const response = await axiosInstance.get(
-      API_PATHS.QUIZZES.GET_QUIZ_BY_ID(quizId)
+      API_PATHS.QUIZZES.GET_QUIZ_BY_ID(quizId),
     );
     return response.data;
   } catch (error) {
@@ -29,7 +30,7 @@ const submitQuiz = async (quizId, answers) => {
   try {
     const response = await axiosInstance.post(
       API_PATHS.QUIZZES.SUBMIT_QUIZ(quizId),
-      { answers }
+      { answers },
     );
     return response.data;
   } catch (error) {
@@ -40,7 +41,7 @@ const submitQuiz = async (quizId, answers) => {
 const getQuizResults = async (quizId) => {
   try {
     const response = await axiosInstance.get(
-      API_PATHS.QUIZZES.GET_QUIZ_RESULTS(quizId)
+      API_PATHS.QUIZZES.GET_QUIZ_RESULTS(quizId),
     );
     return response.data;
   } catch (error) {
@@ -51,7 +52,7 @@ const getQuizResults = async (quizId) => {
 const deleteQuiz = async (quizId) => {
   try {
     const response = await axiosInstance.delete(
-      API_PATHS.QUIZZES.DELETE_QUIZ(quizId)
+      API_PATHS.QUIZZES.DELETE_QUIZ(quizId),
     );
     return response.data;
   } catch (error) {
