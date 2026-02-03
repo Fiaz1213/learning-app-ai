@@ -27,7 +27,7 @@ const QuizTakePage = () => {
         toast.error("Failed to fetch quiz");
         console.error(error);
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
 

@@ -131,7 +131,7 @@ const QuizResultPage = () => {
             </div>
 
             <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-xl">
-              <CheckCheck2
+              <CheckCircle2
                 className="w-4 h-4 text-emerald-600"
                 strokeWidth={2}
               />
