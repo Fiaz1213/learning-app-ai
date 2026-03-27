@@ -1,3 +1,4 @@
+// LAYERED ARCHITECTURE
 // AUTH SERVICE LAYER
 
 import axiosInstance from "../utils/axiosInstance";
@@ -42,7 +43,7 @@ const updateProfile = async (userData) => {
   try {
     const response = await axiosInstance.put(
       API_PATHS.AUTH.UPDATE_PROFILE,
-      userData
+      userData,
     );
     return response.data;
   } catch (error) {
@@ -54,7 +55,7 @@ const changePassword = async (passwords) => {
   try {
     const response = await axiosInstance.post(
       API_PATHS.AUTH.CHANGE_PASSWORD,
-      passwords
+      passwords,
     );
     return response.data;
   } catch (error) {
